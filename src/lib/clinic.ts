@@ -1,0 +1,49 @@
+/**
+ * Single source of truth for Colonnade Dental clinic info.
+ * Edit here and every page (home, /about, /services, footer, schema) updates.
+ */
+export const CLINIC = {
+  name: "Colonnade Dental",
+  tagline: "Gentle · Modern · Trusted",
+  doctor: {
+    name: "Dr. Vincent How",
+    short: "Dr. How",
+    credentials: "DDS",
+    title: "Founder · Family Dentist",
+  },
+  phone: "9052769991",
+  phoneDisplay: "(905) 276-9991",
+  whatsapp: "19052769991",
+  fax: "(905) 896-1902",
+  email: "info@colonnadedental.com",
+  address: {
+    street: "3024 Hurontario Street, Unit G9",
+    line1: "3024 Hurontario Street, Unit G9",
+    line2: "Mississauga, ON L5B 4M4",
+    city: "Mississauga",
+    region: "ON",
+    postal: "L5B 4M4",
+    country: "Canada",
+  },
+  mapsQuery:
+    "Colonnade Dental, 3024 Hurontario Street Unit G9, Mississauga, ON L5B 4M4",
+  yearFounded: 2003,
+  patientCount: "20,000+",
+  rating: 4.9,
+  reviewCount: 180,
+  social: {
+    instagram: "https://www.instagram.com/colonnadedental/",
+    facebook: "https://www.facebook.com/colonnadedental/",
+    google:
+      "https://www.google.com/search?q=Colonnade+Dental+Mississauga+Dr+Vincent+How",
+  },
+} as const;
+
+export const NAV_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "Blog", href: "/#blog" },
+  { label: "Contact", href: "/#contact" },
+] as const;

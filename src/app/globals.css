@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Colonnade Dental brand palette */
+  --color-brand-teal: #0e6e7d;
+  --color-brand-teal-dark: #08515c;
+  --color-brand-teal-soft: #4a9aa8;
+  --color-brand-mint: #d6ece9;
+  --color-brand-gold: #c9a04b;
+  --color-brand-gold-dark: #a87f2c;
+  --color-brand-sage: #88a59d;
+  --color-brand-sage-soft: #c8d8d3;
+  --color-cream: #fbf8f3;
+  --color-cream-soft: #f0e9dc;
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #4a4a4a;
+}
+
+html,
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Subtle film-grain texture for dark sections */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Soft cream noise variant */
+.bg-noise-light::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 240px 240px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Visible focus rings everywhere — accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-brand-teal);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-brand-teal);
+  outline-offset: 3px;
+}
+
+/* Smooth scroll respects reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Utility: serif display */
+.font-display {
+  font-family: var(--font-serif);
+  font-feature-settings: "ss01", "ss02";
+}
+
+/* Section divider — wavy SVG mask helper */
+.divider-curve-down::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px 0;
+  height: 28px;
+  background: inherit;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><path d='M0 0 C 300 60 900 60 1200 0 L 1200 60 L 0 60 Z' fill='black'/></svg>") no-repeat bottom / 100% 100%;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'><path d='M0 0 C 300 60 900 60 1200 0 L 1200 60 L 0 60 Z' fill='black'/></svg>") no-repeat bottom / 100% 100%;
+  pointer-events: none;
+}
+
+/* Subtle drift on hero blur orbs.
+   Slow + small displacement so it never reads like motion or causes vestibular issues.
+   Disabled completely under `prefers-reduced-motion`. */
+@keyframes drift-soft-x {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(20px, -12px, 0); }
+}
+@keyframes drift-soft-y {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-14px, 18px, 0); }
+}
+.drift-x { animation: drift-soft-x 24s ease-in-out infinite; }
+.drift-y { animation: drift-soft-y 30s ease-in-out infinite; }
+
+/* Award badge shimmer — desktop hover only.
+   Touch devices skip it entirely (no hover state). */
+@media (hover: hover) and (pointer: fine) {
+  .award-shimmer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    transition: transform 0.9s ease;
+  }
+  .award-shimmer:hover::before { transform: translateX(120%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift-x, .drift-y { animation: none !important; }
+  .award-shimmer::before { display: none !important; }
+}
