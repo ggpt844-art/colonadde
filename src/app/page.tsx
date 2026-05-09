@@ -193,7 +193,7 @@ export default function Home() {
                 src={PHOTOS.drHow}
                 alt={`${CLINIC.doctor.name}, ${CLINIC.doctor.credentials}`}
                 fill
-                className="object-cover"
+                className="object-cover object-[center_30%]"
                 sizes="(max-width: 640px) 200px, 200px"
                 placeholder="blur"
                 blurDataURL={IMAGE_BLUR}

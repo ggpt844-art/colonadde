@@ -7,13 +7,12 @@ export const IMAGE_BLUR =
   "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNmMGU2Y2YiLz48L3N2Zz4=";
 
 /**
- * Centralized image URLs. We use Unsplash hotlinks so the site builds with no
- * binary assets in the repo. Swap these for self-hosted /public/images/* when
- * the clinic provides their own photography.
+ * Centralized image URLs. Dr. How uses self-hosted photography from
+ * /public/images. Remaining entries use Unsplash until replaced.
  */
 export const PHOTOS = {
-  drHow:
-    "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1200&q=80",
+  /** Official portrait — served from /public/images */
+  drHow: "/images/dr-vincent-how.png",
   clinicInterior:
     "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80",
   exam:
