@@ -1,12 +1,10 @@
 /**
  * Tiny cream-tinted SVG used as a blurDataURL for next/image.
- * Decodes to:
- *   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">
- *     <rect width="8" height="8" fill="#f0e9dc"/>
- *   </svg>
+ * Matches the warm cream of the Colonnade Dental brand palette so images
+ * fade in without a colour pop.
  */
 export const IMAGE_BLUR =
-  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNmMGU5ZGMiLz48L3N2Zz4=";
+  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNmMGU2Y2YiLz48L3N2Zz4=";
 
 /**
  * Centralized image URLs. We use Unsplash hotlinks so the site builds with no
@@ -24,6 +22,10 @@ export const PHOTOS = {
     "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1400&q=80",
   smile:
     "https://images.unsplash.com/photo-1559131397-f94da358f7ca?auto=format&fit=crop&w=1400&q=80",
+  microscope:
+    "https://images.unsplash.com/photo-1581595220892-b0739db3ba8c?auto=format&fit=crop&w=1400&q=80",
+  laser:
+    "https://images.unsplash.com/photo-1606811957098-6c4d56cea816?auto=format&fit=crop&w=1400&q=80",
   family:
     "https://images.unsplash.com/photo-1581585099522-f6ac2efe6217?auto=format&fit=crop&w=1400&q=80",
   award:

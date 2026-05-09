@@ -50,7 +50,7 @@ export default function StickyMobileCTA({ phone, phoneDisplay }: Props) {
         {pastBook ? (
           <a
             href={`tel:${phone}`}
-            className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#0e6e7d] text-white px-5 py-3.5 font-bold text-[15px] active:scale-95 transition-transform shadow-lg shadow-[#0e6e7d]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0e6e7d] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#1a1a1a] text-white px-5 py-3.5 font-bold text-[15px] active:scale-95 transition-transform shadow-lg shadow-black/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a67a1f] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             <Phone size={16} />
             Call Dr. How
@@ -58,10 +58,10 @@ export default function StickyMobileCTA({ phone, phoneDisplay }: Props) {
         ) : (
           <a
             href="#book"
-            className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#0e6e7d] text-white px-5 py-3.5 font-bold text-[15px] active:scale-95 transition-transform shadow-lg shadow-[#0e6e7d]/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0e6e7d] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-[#c89535] text-[#1a1a1a] px-5 py-3.5 font-bold text-[15px] active:scale-95 transition-transform shadow-lg shadow-[#c89535]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a67a1f] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             <Calendar size={16} />
-            Book Free Exam
+            Book a Visit
           </a>
         )}
         {pastBook ? (

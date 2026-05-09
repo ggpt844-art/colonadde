@@ -21,13 +21,13 @@ export default function FAQ({ items }: Props) {
             <button
               type="button"
               onClick={() => setOpen(isOpen ? null : idx)}
-              className="w-full flex items-center justify-between gap-4 px-5 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a04b] focus-visible:ring-inset"
+              className="w-full flex items-center justify-between gap-4 px-5 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c89535] focus-visible:ring-inset"
               aria-expanded={isOpen}
             >
               <span className="font-bold text-[15px] text-[#1a1a1a] leading-tight">
                 {item.q}
               </span>
-              <span className="grid place-items-center w-7 h-7 rounded-full bg-[#0e6e7d]/10 text-[#0e6e7d] shrink-0">
+              <span className="grid place-items-center w-7 h-7 rounded-full bg-[#c89535]/15 text-[#a67a1f] shrink-0">
                 {isOpen ? <Minus size={14} /> : <Plus size={14} />}
               </span>
             </button>

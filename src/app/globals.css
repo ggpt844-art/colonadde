@@ -5,17 +5,20 @@
   --font-serif: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Colonnade Dental brand palette */
-  --color-brand-teal: #0e6e7d;
-  --color-brand-teal-dark: #08515c;
-  --color-brand-teal-soft: #4a9aa8;
-  --color-brand-mint: #d6ece9;
-  --color-brand-gold: #c9a04b;
-  --color-brand-gold-dark: #a87f2c;
-  --color-brand-sage: #88a59d;
-  --color-brand-sage-soft: #c8d8d3;
-  --color-cream: #fbf8f3;
-  --color-cream-soft: #f0e9dc;
+  /* Colonnade Dental brand palette
+     Mirrors the actual logo: warm gold seal + black classical columns on cream.
+     Gold (#c89535) is the brand pop; ink (#1a1a1a) carries headlines + primary
+     buttons; cream is the canvas. */
+  --color-brand-gold: #c89535;
+  --color-brand-gold-dark: #a67a1f;
+  --color-brand-gold-deep: #7a5614;
+  --color-brand-gold-soft: #f3deaa;
+  --color-brand-gold-mist: #fbf2d8;
+  --color-brand-sage: #6f8a7f;
+  --color-brand-sage-soft: #cfdcd6;
+  --color-cream: #faf6ee;
+  --color-cream-soft: #f0e6cf;
+  --color-cream-deep: #e6d8b3;
   --color-ink: #1a1a1a;
   --color-ink-soft: #4a4a4a;
 }
@@ -69,13 +72,13 @@ body {
 
 /* Visible focus rings everywhere — accessibility */
 :focus-visible {
-  outline: 2px solid var(--color-brand-teal);
+  outline: 2px solid var(--color-brand-gold-dark);
   outline-offset: 2px;
   border-radius: 6px;
 }
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--color-brand-teal);
+  outline: 2px solid var(--color-brand-gold-dark);
   outline-offset: 3px;
 }
 

@@ -17,7 +17,7 @@ export default function GoogleReviewCard({
   body,
   reviewCount,
   localGuide = false,
-  avatarColor = "#0e6e7d",
+  avatarColor = "#1a1a1a",
 }: Props) {
   return (
     <figure className="rounded-3xl bg-white p-6 ring-1 ring-black/5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">

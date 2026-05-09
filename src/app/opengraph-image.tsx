@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Colonnade Dental — Trusted Dentist in Mississauga";
+export const alt = "Colonnade Dental — Dr. Vincent How, Dentist in Mississauga";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,28 +21,38 @@ export default async function OG() {
           position: "relative",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <div
             style={{
-              width: 64,
-              height: 64,
+              width: 72,
+              height: 72,
               borderRadius: 999,
-              background: "#0e6e7d",
-              color: "white",
+              background: "#c89535",
+              color: "#1a1a1a",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 36,
+              fontSize: 40,
               fontWeight: 900,
+              fontStyle: "italic",
+              fontFamily: "Georgia, serif",
             }}
           >
             C
           </div>
           <div style={{ display: "flex", flexDirection: "column", lineHeight: 1 }}>
-            <div style={{ fontSize: 22, fontWeight: 900, letterSpacing: "0.04em" }}>
-              COLONNADE
+            <div
+              style={{
+                fontSize: 30,
+                fontWeight: 900,
+                fontStyle: "italic",
+                fontFamily: "Georgia, serif",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              Colonnade
             </div>
-            <div style={{ fontSize: 13, color: "#c9a04b", fontWeight: 700, letterSpacing: "0.32em", marginTop: 4 }}>
+            <div style={{ fontSize: 14, color: "#c89535", fontWeight: 700, letterSpacing: "0.34em", marginTop: 6 }}>
               DENTAL
             </div>
           </div>
@@ -51,29 +61,33 @@ export default async function OG() {
         <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 24 }}>
           <div
             style={{
-              fontSize: 28,
-              color: "#c9a04b",
+              fontSize: 26,
+              color: "#c89535",
               fontWeight: 700,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
             }}
           >
-            TRUSTED MISSISSAUGA DENTIST · SINCE 2003
+            DR. VINCENT HOW · MISSISSAUGA · 20+ YEARS
           </div>
           <div
             style={{
-              fontSize: 88,
+              fontSize: 80,
               fontWeight: 900,
               lineHeight: 1.05,
               letterSpacing: "-0.03em",
               color: "white",
+              fontFamily: "Georgia, serif",
             }}
           >
-            Your smile.{" "}
-            <span style={{ color: "#c9a04b" }}>Our craft.</span>
+            A beautiful smile{" "}
+            <span style={{ color: "#c89535", fontStyle: "italic" }}>
+              never goes out of style.
+            </span>
           </div>
-          <div style={{ fontSize: 30, color: "rgba(255,255,255,0.75)", lineHeight: 1.3, maxWidth: 950 }}>
-            Free new-patient exam with Dr. Vincent How — gentle, modern dentistry on Hurontario St.
+          <div style={{ fontSize: 28, color: "rgba(255,255,255,0.78)", lineHeight: 1.3, maxWidth: 980 }}>
+            Microscope-enhanced, laser-assisted dentistry on Hurontario Street —
+            included on every visit at no additional cost.
           </div>
         </div>
 
@@ -82,12 +96,12 @@ export default async function OG() {
             position: "absolute",
             top: -120,
             right: -120,
-            width: 380,
-            height: 380,
+            width: 420,
+            height: 420,
             borderRadius: 999,
-            background: "#0e6e7d",
-            opacity: 0.4,
-            filter: "blur(80px)",
+            background: "#c89535",
+            opacity: 0.35,
+            filter: "blur(90px)",
           }}
         />
       </div>

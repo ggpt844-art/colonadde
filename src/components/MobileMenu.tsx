@@ -3,18 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
-import ToothMark from "./ToothMark";
+import ColonnadeMark from "./ColonnadeMark";
 
 type NavLink = { label: string; href: string; tag?: string };
 
 const links: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "About Dr. How", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Technology", href: "/#technology" },
   { label: "First Visit", href: "/#first-visit" },
-  { label: "Reviews", href: "/#reviews" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Blog", href: "/#blog", tag: "Coming soon" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -33,24 +32,24 @@ export default function MobileMenu({ phone, phoneDisplay, whatsapp }: Props) {
         onClick={() => setOpen(true)}
         aria-label="Open menu"
         aria-expanded={open}
-        className="grid place-items-center w-11 h-11 rounded-full hover:bg-[#1a1a1a]/5 text-[#1a1a1a] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0e6e7d] lg:hidden"
+        className="grid place-items-center w-11 h-11 rounded-full hover:bg-[#1a1a1a]/5 text-[#1a1a1a] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a67a1f] lg:hidden"
       >
         <Menu size={26} />
       </button>
 
       {open && (
         <div
-          className="fixed inset-0 z-50 bg-[#fbf8f3] flex flex-col p-6 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#faf6ee] flex flex-col p-6 overflow-y-auto"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
         >
           <div className="flex items-center justify-between mb-10">
-            <ToothMark size={42} withWordmark />
+            <ColonnadeMark size={42} withWordmark />
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="grid place-items-center w-11 h-11 rounded-full bg-[#1a1a1a]/5 hover:bg-[#1a1a1a]/10 text-[#1a1a1a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0e6e7d]"
+              className="grid place-items-center w-11 h-11 rounded-full bg-[#1a1a1a]/5 hover:bg-[#1a1a1a]/10 text-[#1a1a1a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a67a1f]"
             >
               <X size={24} />
             </button>
@@ -61,11 +60,11 @@ export default function MobileMenu({ phone, phoneDisplay, whatsapp }: Props) {
                 key={link.label}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="py-3.5 text-2xl font-semibold text-[#1a1a1a]/90 hover:text-[#0e6e7d] transition-colors border-b border-black/10 flex items-center justify-between"
+                className="py-3.5 text-2xl font-semibold text-[#1a1a1a]/90 hover:text-[#a67a1f] transition-colors border-b border-black/10 flex items-center justify-between"
               >
                 <span>{link.label}</span>
                 {link.tag && (
-                  <span className="text-[10px] text-[#0e6e7d] bg-[#0e6e7d]/10 px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">
+                  <span className="text-[10px] text-[#a67a1f] bg-[#c89535]/15 px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">
                     {link.tag}
                   </span>
                 )}
@@ -76,7 +75,7 @@ export default function MobileMenu({ phone, phoneDisplay, whatsapp }: Props) {
             <a
               href={`tel:${phone}`}
               onClick={() => setOpen(false)}
-              className="rounded-full bg-[#0e6e7d] text-white px-6 py-4 text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#0e6e7d]/20"
+              className="rounded-full bg-[#1a1a1a] text-white px-6 py-4 text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-black/20 hover:bg-[#c89535] hover:text-[#1a1a1a] transition-colors"
             >
               <Phone size={18} />
               {phoneDisplay}

@@ -8,9 +8,10 @@ const STEPS: { q: string; options: string[] }[] = [
     q: "What brings you in?",
     options: [
       "Routine cleaning & check-up",
-      "Cosmetic — whitening or veneers",
+      "Cosmetic — whitening, veneers, bonding",
       "Pain, swelling, or a chipped tooth",
       "Replace a missing tooth (implant, denture)",
+      "Gum recession (Chao Pinhole®)",
       "Not sure — just looking around",
     ],
   },
@@ -19,11 +20,11 @@ const STEPS: { q: string; options: string[] }[] = [
     options: ["Within the last 6 months", "1–2 years ago", "Several years ago", "I can't remember"],
   },
   {
-    q: "Do you have dental insurance?",
+    q: "How would you like to handle billing?",
     options: [
-      "Yes — private extended health",
-      "Yes — CDCP / federal plan",
-      "No — paying out of pocket",
+      "Direct billing to my insurance",
+      "Out of pocket — ODA fee guide is fine",
+      "I have CDCP / federal coverage",
       "Not sure — please verify for me",
     ],
   },
@@ -57,11 +58,11 @@ export default function Quiz({ phone, phoneDisplay }: Props) {
   if (step === -1) {
     return (
       <div className="rounded-3xl bg-white ring-1 ring-black/5 shadow-sm p-7 max-w-md mx-auto text-center">
-        <p className="text-[#0e6e7d] text-[11px] tracking-[0.25em] uppercase font-bold mb-3">
+        <p className="text-[#a67a1f] text-[11px] tracking-[0.25em] uppercase font-bold mb-3">
           Optional · 30 seconds
         </p>
         <h3 className="font-display text-[26px] font-black leading-tight text-[#1a1a1a]">
-          Is this for me?
+          Is this practice for me?
         </h3>
         <p className="mt-3 text-[#2c2c2c] text-[15px] leading-relaxed">
           Three quick questions so Dr. How can be ready before you walk in.
@@ -69,13 +70,13 @@ export default function Quiz({ phone, phoneDisplay }: Props) {
         <button
           type="button"
           onClick={() => setStep(0)}
-          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#0e6e7d] text-white px-7 py-3.5 font-bold text-sm hover:bg-[#08515c] transition-colors shadow-md shadow-[#0e6e7d]/20"
+          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#1a1a1a] text-white px-7 py-3.5 font-bold text-sm hover:bg-[#c89535] hover:text-[#1a1a1a] transition-colors shadow-md shadow-black/15"
         >
           Start <ChevronRight size={16} />
         </button>
         <a
           href={`tel:${phone}`}
-          className="block mt-4 text-[#0e6e7d] text-sm font-semibold underline-offset-4 hover:underline"
+          className="block mt-4 text-[#a67a1f] text-sm font-semibold underline-offset-4 hover:underline"
         >
           Or skip · call us at {phoneDisplay}
         </a>
@@ -86,23 +87,23 @@ export default function Quiz({ phone, phoneDisplay }: Props) {
   if (step >= STEPS.length) {
     return (
       <div className="rounded-3xl bg-white ring-1 ring-black/5 shadow-sm p-7 max-w-md mx-auto text-center">
-        <span className="grid place-items-center w-12 h-12 mx-auto mb-4 rounded-full bg-[#0e6e7d]/10 text-[#0e6e7d]">
+        <span className="grid place-items-center w-12 h-12 mx-auto mb-4 rounded-full bg-[#c89535]/15 text-[#a67a1f]">
           <Check size={22} strokeWidth={2.5} />
         </span>
-        <p className="text-[#0e6e7d] text-[11px] tracking-[0.25em] uppercase font-bold mb-3">
+        <p className="text-[#a67a1f] text-[11px] tracking-[0.25em] uppercase font-bold mb-3">
           Good news
         </p>
         <h3 className="font-display text-[26px] font-black leading-tight text-[#1a1a1a]">
           Yes — we can help.
         </h3>
         <p className="mt-3 text-[#2c2c2c] text-[15px] leading-relaxed">
-          Based on your answers, a free new-patient exam with Dr. How is a
-          good next step. He&apos;ll do a comprehensive exam, take digital
-          x-rays, and walk you through a treatment plan. No pressure, no contracts.
+          Based on your answers, booking a visit with Dr. How is a good next step.
+          We&apos;ll do a comprehensive exam (microscope-assisted), discuss findings on
+          screen, and walk you through options at the ODA fee guide rate.
         </p>
         <a
           href={`tel:${phone}`}
-          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#0e6e7d] text-white px-7 py-4 font-bold text-base hover:bg-[#08515c] transition-colors shadow-md shadow-[#0e6e7d]/20 w-full"
+          className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#c89535] text-[#1a1a1a] px-7 py-4 font-bold text-base hover:bg-[#a67a1f] hover:text-white transition-colors shadow-md shadow-[#c89535]/30 w-full"
         >
           <Phone size={18} />
           Call to book · {phoneDisplay}
@@ -110,7 +111,7 @@ export default function Quiz({ phone, phoneDisplay }: Props) {
         <button
           type="button"
           onClick={reset}
-          className="mt-4 inline-flex items-center gap-1.5 text-[#2c2c2c] text-sm font-semibold hover:text-[#0e6e7d] transition-colors"
+          className="mt-4 inline-flex items-center gap-1.5 text-[#2c2c2c] text-sm font-semibold hover:text-[#a67a1f] transition-colors"
         >
           <RotateCcw size={13} /> Start over
         </button>
@@ -125,20 +126,20 @@ export default function Quiz({ phone, phoneDisplay }: Props) {
   return (
     <div className="rounded-3xl bg-white ring-1 ring-black/5 shadow-sm p-7 max-w-md mx-auto">
       <div className="flex items-center justify-between mb-5 gap-4">
-        <span className="text-[#0e6e7d] text-[11px] tracking-[0.25em] uppercase font-bold">
+        <span className="text-[#a67a1f] text-[11px] tracking-[0.25em] uppercase font-bold">
           Step {step + 1} of {STEPS.length}
         </span>
         <a
           href={`tel:${phone}`}
-          className="inline-flex items-center gap-1 text-[#0e6e7d] text-xs font-bold underline-offset-4 hover:underline whitespace-nowrap"
+          className="inline-flex items-center gap-1 text-[#a67a1f] text-xs font-bold underline-offset-4 hover:underline whitespace-nowrap"
         >
           <Phone size={12} /> Skip · call us
         </a>
       </div>
 
-      <div className="h-1.5 w-full rounded-full bg-[#fbf8f3] overflow-hidden mb-6">
+      <div className="h-1.5 w-full rounded-full bg-[#f0e6cf] overflow-hidden mb-6">
         <div
-          className="h-full bg-[#0e6e7d] transition-all duration-500"
+          className="h-full bg-[#c89535] transition-all duration-500"
           style={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
           aria-hidden
         />
@@ -153,7 +154,7 @@ export default function Quiz({ phone, phoneDisplay }: Props) {
             <button
               type="button"
               onClick={() => choose(option)}
-              className="w-full text-left rounded-2xl bg-[#fbf8f3] hover:bg-[#0e6e7d] hover:text-white ring-1 ring-black/5 hover:ring-[#0e6e7d] px-5 py-4 text-[15px] font-semibold text-[#1a1a1a] transition-colors"
+              className="w-full text-left rounded-2xl bg-[#faf6ee] hover:bg-[#1a1a1a] hover:text-white ring-1 ring-black/5 hover:ring-[#1a1a1a] px-5 py-4 text-[15px] font-semibold text-[#1a1a1a] transition-colors"
             >
               {option}
             </button>

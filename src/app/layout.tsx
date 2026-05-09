@@ -27,11 +27,11 @@ const SITE_URL = "https://colonnadedental.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Colonnade Dental | Trusted Dentist in Mississauga, ON",
+    default: "Colonnade Dental | Dr. Vincent How — Dentist in Mississauga, ON",
     template: "%s | Colonnade Dental",
   },
   description:
-    "Family-owned dental practice in Mississauga since 2003. Dr. Vincent How offers gentle, modern dentistry — cleanings, cosmetic, implants, Invisalign, and more. Free new-patient exam.",
+    "Family dental practice in Mississauga led by Dr. Vincent How. 20+ years of microscope-enhanced, laser-assisted dentistry — cleanings, cosmetic, implants, root canals, and Chao Pinhole® gum rejuvenation. 3024 Hurontario Street.",
   keywords: [
     "dentist Mississauga",
     "Colonnade Dental",
@@ -40,8 +40,9 @@ export const metadata: Metadata = {
     "Mississauga dental clinic",
     "dental implants Mississauga",
     "cosmetic dentistry Mississauga",
-    "Invisalign Mississauga",
-    "teeth whitening Mississauga",
+    "laser dentistry Mississauga",
+    "surgical microscope dentist",
+    "Chao Pinhole gum rejuvenation",
     "family dentist Mississauga",
   ],
   authors: [{ name: "Colonnade Dental" }],
@@ -57,15 +58,15 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: SITE_URL,
     siteName: "Colonnade Dental",
-    title: "Colonnade Dental | Trusted Dentist in Mississauga, ON",
+    title: "Colonnade Dental | Dr. Vincent How — Dentist in Mississauga, ON",
     description:
-      "Family-owned dental practice in Mississauga since 2003 — gentle, modern dentistry from Dr. Vincent How.",
+      "20+ years of microscope-enhanced, laser-assisted dentistry from Dr. Vincent How. A beautiful smile never goes out of style.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Colonnade Dental | Trusted Dentist in Mississauga, ON",
+    title: "Colonnade Dental | Dr. Vincent How — Dentist in Mississauga, ON",
     description:
-      "Family-owned dental practice in Mississauga since 2003 — gentle, modern dentistry from Dr. Vincent How.",
+      "20+ years of microscope-enhanced, laser-assisted dentistry from Dr. Vincent How. A beautiful smile never goes out of style.",
   },
   alternates: {
     canonical: SITE_URL,
@@ -84,7 +85,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0e6e7d",
+  themeColor: "#c89535",
   width: "device-width",
   initialScale: 1,
 };
@@ -96,7 +97,8 @@ const localBusinessSchema = {
   name: "Colonnade Dental",
   alternateName: "Dr. Vincent How — Colonnade Dental",
   description:
-    "Family dental clinic in Mississauga led by Dr. Vincent How. Preventative, cosmetic, implant, and orthodontic care using surgical microscopes and laser dentistry. Serving Mississauga and the Peel Region since 2003.",
+    "Family dental clinic in Mississauga led by Dr. Vincent How. Preventative, cosmetic, implant, and prosthodontic care using surgical microscopes (up to 12×) and KaVo K.E.Y / Fotona Lightwalker AT-S laser dentistry — included on every visit at no additional cost. Serving Mississauga and surrounding areas for over 20 years.",
+  slogan: "A beautiful smile never goes out of style.",
   url: SITE_URL,
   telephone: "+1-905-276-9991",
   faxNumber: "+1-905-896-1902",
@@ -105,6 +107,8 @@ const localBusinessSchema = {
   logo: `${SITE_URL}/icon`,
   priceRange: "$$",
   medicalSpecialty: "Dentistry",
+  paymentAccepted: "Visa, MasterCard, Debit, Cash, Cheque",
+  currenciesAccepted: "CAD",
   address: {
     "@type": "PostalAddress",
     streetAddress: "3024 Hurontario Street, Unit G9",
@@ -130,16 +134,12 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "10:00", closes: "18:00" },
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "10:00", closes: "18:00" },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "180",
-    bestRating: "5",
-    worstRating: "1",
-  },
+  // Real awards published on colonnadedental.com/meet-the-dentist.
+  // No fabricated rankings, "best of" badges, or aggregate ratings.
   award: [
-    "Top Dentist 2022 — Mississauga — Family Dentistry",
-    "Patients' Choice 2024 — Peel Region — Cosmetic Dentistry",
+    "Quintessence Research Award",
+    "Toronto Academy Crown & Bridge Study Club Award",
+    "Association of Prosthodontics of Ontario Award",
   ],
   founder: {
     "@type": "Person",
@@ -147,6 +147,16 @@ const localBusinessSchema = {
     honorificPrefix: "Dr.",
     honorificSuffix: "DDS",
     jobTitle: "Doctor of Dental Surgery",
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "University of Western Ontario, Faculty of Dentistry",
+    },
+    memberOf: [
+      { "@type": "Organization", name: "Ontario Dental Association" },
+      { "@type": "Organization", name: "Canadian Dental Association" },
+      { "@type": "Organization", name: "International Orthodontic Association" },
+      { "@type": "Organization", name: "Halton Peel Dental Association" },
+    ],
   },
   sameAs: [
     "https://www.instagram.com/colonnadedental/",
@@ -175,9 +185,14 @@ export default function RootLayout({
   return (
     <html
       lang="en-CA"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} antialiased`}
+      suppressHydrationWarning
     >
-      <body className="bg-[#fbf8f3] text-[#1a1a1a] min-h-screen font-sans">
+      <body
+        className="bg-[#faf6ee] text-[#1a1a1a] min-h-screen font-sans"
+        suppressHydrationWarning
+      >
         <SkipLink />
         {children}
         <Script

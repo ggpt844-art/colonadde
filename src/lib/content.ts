@@ -2,178 +2,152 @@ import {
   Award,
   ShieldCheck,
   Users,
-  Heart,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import type { FaqItem } from "@/components/FAQ";
 import { PHOTOS } from "@/lib/imageBlur";
 
 /**
- * Pieces of the free new-patient exam, with normal a-la-carte pricing.
- * Drives the hero "value stack" pills and the /services "what's included" grid.
+ * Three high-level service pillars shown as big cards on /services.
+ * Pulled from colonnadedental.com/dental-services and the technology pages.
  */
-export const valueStack = [
-  { label: "Comprehensive Exam", value: "$120" },
-  { label: "Digital X-Rays", value: "$95" },
-  { label: "Treatment Consultation", value: "$75" },
-];
-
-/** Three high-level service pillars shown as big cards on /services. */
 export const services = [
   {
-    title: "Preventative & Family Dentistry",
+    title: "Preventative & Hygiene",
     blurb:
-      "Cleanings, exams, x-rays, sealants, and fluoride for every age — gentle care that keeps you out of the chair.",
+      "Cleanings, exams, periodontal therapy, and digital x-rays for every age — early detection before small issues turn into big ones.",
     image: PHOTOS.cleaning,
   },
   {
-    title: "Cosmetic & Smile Design",
+    title: "Cosmetic & Restorative",
     blurb:
-      "Whitening, veneers, bonding, and full smile makeovers using surgical microscopes for precision finishes.",
+      "Veneers, bonding, whitening, crowns, bridges, and full smile makeovers — finished under surgical-microscope precision.",
     image: PHOTOS.smile,
   },
   {
-    title: "Implants, Crowns & Restorative",
+    title: "Implants, Surgery & Specialty",
     blurb:
-      "Replace missing teeth and restore broken ones with implants, crowns, bridges, and dentures built to last.",
+      "Dental implants, dentures, root canal therapy, extractions, and our scalpel-free Chao Pinhole® gum rejuvenation.",
     image: PHOTOS.exam,
   },
 ];
 
 /**
- * Detailed treatments grid (mirrors the "treatments" depth on top dental sites
- * like mcitydental.ca). Used on /services.
+ * Detailed treatments grid — the actual 13 services listed on
+ * colonnadedental.com/dental-services. Used on /services.
  */
 export const treatments = [
   {
-    title: "Free New Patient Exam",
+    title: "Hygiene",
     blurb:
-      "A complimentary exam, x-rays, and treatment consultation with Dr. How for new patients.",
+      "Routine cleanings to remove plaque and calculus, plus oral-cancer screening and periodontal monitoring.",
   },
   {
-    title: "Cleanings & Hygiene",
+    title: "Tooth Restoration",
     blurb:
-      "Gentle, thorough cleanings to keep gums healthy and prevent decay long-term.",
+      "Composite resin fillings that restore strength while matching the shade and translucency of natural teeth.",
   },
   {
-    title: "Cosmetic Veneers",
+    title: "Bonding",
     blurb:
-      "Ultra-thin, custom-made shells that transform the front surface of your teeth.",
+      "Tooth-coloured composite to close gaps, repair chips, and cover spots or discolouration in a single visit.",
   },
   {
-    title: "Teeth Whitening",
+    title: "Veneers",
     blurb:
-      "In-office and take-home whitening that brightens stained or discoloured teeth safely.",
+      "Ultra-thin porcelain or resin shells (under 1 mm) for teeth that are discoloured, worn, chipped, or misaligned.",
   },
   {
-    title: "Dental Implants",
+    title: "Tooth Whitening",
     blurb:
-      "Permanent, natural-looking replacements for missing teeth — single-tooth or full-arch.",
+      "In-office and take-home whitening that lifts stain from coffee, tea, tobacco, medications, and aging.",
   },
   {
     title: "Crowns & Bridges",
     blurb:
-      "Custom-fit ceramic crowns and bridges that protect, restore, and blend in seamlessly.",
-  },
-  {
-    title: "Root Canal Therapy",
-    blurb:
-      "Surgical-microscope guided endodontics to save infected teeth and end the pain.",
-  },
-  {
-    title: "Invisalign Clear Aligners",
-    blurb:
-      "Straighten teeth discreetly with custom clear aligners — most plans 6 to 18 months.",
-  },
-  {
-    title: "Tooth Extractions",
-    blurb:
-      "Simple and surgical extractions with calm, gentle care and clear aftercare instructions.",
-  },
-  {
-    title: "Dentures & Partials",
-    blurb:
-      "Comfortable, natural-looking full and partial dentures fitted to your bite.",
+      "Noble-alloy, porcelain, or porcelain-fused-to-metal restorations for fractured or heavily filled teeth.",
   },
   {
     title: "Periodontal Therapy",
     blurb:
-      "Gum disease treatment, deep cleanings, and gum rejuvenation to restore healthy tissue.",
+      "Treatment for gingivitis and periodontitis — the leading cause of adult tooth loss — with deep cleanings and follow-up.",
   },
   {
-    title: "Emergency Dental Care",
+    title: "Root Canal Treatment",
     blurb:
-      "Same-day appointments for pain, swelling, broken teeth, and dental trauma.",
+      "Microscope- and laser-assisted endodontics that save severely decayed, infected, or broken teeth from extraction.",
+  },
+  {
+    title: "Extractions",
+    blurb:
+      "Simple and surgical extractions, including impacted wisdom teeth, with calm aftercare guidance.",
+  },
+  {
+    title: "Cosmetic Dentistry",
+    blurb:
+      "Personalized smile makeovers — see the smile gallery for restoration, cosmetic, orthodontic, and implant cases.",
+  },
+  {
+    title: "Implants",
+    blurb:
+      "Permanent replacements for one missing tooth or many — keeps neighbouring teeth from drifting and bone from resorbing.",
+  },
+  {
+    title: "Dentures",
+    blurb:
+      "Complete and partial dentures designed for comfort, function, and a natural look.",
+  },
+  {
+    title: "Gum Rejuvenation (Chao Pinhole®)",
+    blurb:
+      "Scalpel-free, suture-free, graft-free correction of gum recession through a tiny pinhole — minimal downtime.",
   },
 ];
 
 export const features: { icon: LucideIcon; title: string; blurb: string }[] = [
   {
     icon: Award,
-    title: "20+ Years Trusted in Mississauga",
+    title: "20+ Years in Mississauga",
     blurb:
-      "A family practice serving Mississauga since 2003 — patients of every age, generation after generation.",
+      "A family practice serving Mississauga and surrounding areas for over two decades — patients of every age, generation after generation.",
   },
   {
     icon: ShieldCheck,
-    title: "Surgical Microscopes & Laser Tech",
+    title: "Surgical Microscopes — at no extra cost",
     blurb:
-      "One of the few clinics in Ontario routinely using surgical microscopes and laser dentistry for unmatched precision.",
+      "Up to 12× magnification with shadow-free lighting, live video feed, and image capture — included on every visit, not an upgrade.",
+  },
+  {
+    icon: Sparkles,
+    title: "Laser Dentistry — at no extra cost",
+    blurb:
+      "KaVo K.E.Y and Fotona Lightwalker AT-S systems — gentler treatment, less anaesthetic, faster healing, no extra fee.",
   },
   {
     icon: Users,
-    title: "Care for the Whole Family",
+    title: "Family-Owned, Family-Treated",
     blurb:
-      "From toddler check-ups to grandparents' dentures, Dr. How treats every patient with calm, gentle care.",
-  },
-  {
-    icon: Heart,
-    title: "20,000+ Smiles Cared For",
-    blurb:
-      "Two decades of restorative, cosmetic, and preventative work — measured in confident smiles, not chair time.",
+      "“I strive to treat everyone as I would my own family — respect, dignity, mutual trust and honesty.” — Dr. Vincent How",
   },
 ];
 
-export const reviews = [
-  {
-    name: "Jennifer M.",
-    initial: "J",
-    date: "2 weeks ago",
-    body: "Dr. How is the most gentle dentist I have ever been to. The whole team is warm, professional, and they explain everything clearly. My whole family comes here now.",
-    reviewCount: 38,
-    localGuide: true,
-    avatarColor: "#0e6e7d",
-  },
-  {
-    name: "Raj P.",
-    initial: "R",
-    date: "1 month ago",
-    body: "Got veneers done with Dr. How and the result is incredible — they look completely natural. Zero pressure, fair pricing, and the office is spotless.",
-    reviewCount: 14,
-    localGuide: false,
-    avatarColor: "#88a59d",
-  },
-  {
-    name: "Marcus L.",
-    initial: "M",
-    date: "3 weeks ago",
-    body: "Came in with a broken molar and Dr. How saw me the same day. Painless root canal and a beautiful crown a few weeks later. Best dentist in Mississauga, hands down.",
-    reviewCount: 76,
-    localGuide: true,
-    avatarColor: "#c9a04b",
-  },
-  {
-    name: "Anita D.",
-    initial: "A",
-    date: "2 months ago",
-    body: "First dentist who actually listened to my anxiety and walked me through every step. My kids love coming here too. Highly recommend Colonnade Dental.",
-    reviewCount: 6,
-    localGuide: false,
-    avatarColor: "#1a73e8",
-  },
-];
+/**
+ * Smile-gallery categories pulled directly from colonnadedental.com/smile-gallery.
+ * Rendered as a strip on the home page in place of fabricated patient quotes.
+ */
+export const smileGalleryCategories = [
+  "Restoration",
+  "Cosmetic",
+  "Implant",
+  "Orthodontic",
+  "Hygiene",
+  "Gum Rejuvenation",
+  "Laser",
+  "Amalgam Replacement",
+] as const;
 
-/** Hours per the published Colonnade Dental schedule. */
+/** Hours per the published Colonnade Dental schedule (contact-us page). */
 export const hours = [
   { day: "Monday", time: "10:00 AM – 6:00 PM" },
   { day: "Tuesday", time: "Closed" },
@@ -184,101 +158,99 @@ export const hours = [
   { day: "Sunday", time: "Closed" },
 ];
 
+/**
+ * Real awards & affiliations — verified from colonnadedental.com/meet-the-dentist.
+ * Do not invent additional ones; if it's not in Dr. How's published bio, it
+ * does not belong here.
+ */
 export const awards = [
   {
-    title: "Top Dentist",
-    year: "2022",
-    region: "Mississauga",
-    category: "Family Dentistry",
+    title: "Quintessence Research Award",
+    category: "Research",
     variant: "gold" as const,
   },
   {
-    title: "Patients' Choice",
-    year: "2024",
-    region: "Peel Region",
-    category: "Cosmetic Dentistry",
-    variant: "teal" as const,
+    title: "Toronto Academy of Crown & Bridge Study Club Award",
+    category: "Restorative",
+    variant: "ink" as const,
   },
   {
-    title: "Best of Mississauga",
-    year: "2023",
-    region: "Mississauga News",
-    category: "Dental Care",
-    variant: "sage" as const,
-  },
-  {
-    title: "Excellence Award",
-    year: "2025",
-    region: "Ontario Dental Assoc.",
-    category: "Microscope Dentistry",
+    title: "Association of Prosthodontics of Ontario Award",
+    category: "Prosthodontics",
     variant: "gold" as const,
   },
 ];
 
+/**
+ * Professional memberships — verified from colonnadedental.com/meet-the-dentist.
+ */
+export const affiliations = [
+  "Ontario Dental Association",
+  "Canadian Dental Association",
+  "International Orthodontic Association",
+  "Halton Peel Dental Association",
+] as const;
+
 export const faqItems: FaqItem[] = [
   {
     q: "Where is Colonnade Dental located?",
-    a: "We are located on the ground floor of The Colonnade building at the northwest corner of Hurontario and Dundas streets in Mississauga — 3024 Hurontario Street, Unit G9. Free patient parking on site, wheelchair-accessible entrance, and steps from major bus routes.",
+    a: "We're on the ground floor of The Colonnade building at the northwest corner of Hurontario and Dundas streets — 3024 Hurontario Street, Unit G9, Mississauga. Easy access from all major highways and steps from major bus routes.",
   },
   {
     q: "Are you accepting new patients?",
-    a: "Absolutely. We always welcome new patients and offer a complimentary exam, x-rays, and treatment consultation for your first visit (a $290 value).",
+    a: "Yes — we always welcome new patients of every age. Call (905) 276-9991 or email us to book your first appointment.",
   },
   {
-    q: "Do I need a referral to see a dentist?",
-    a: "No. You do not need a doctor's referral to book an appointment with us. Anyone can book a free new-patient exam directly.",
+    q: "How does billing and insurance work?",
+    a: "Our fees follow the current Ontario Dental Association fee guide. We can directly bill your insurance company and submit any co-insurance forms on your behalf at no extra charge. Any portion not covered by insurance is your responsibility.",
   },
   {
-    q: "What insurance do you accept?",
-    a: "We accept all major Canadian dental insurance providers including Sun Life, Manulife, Canada Life, Green Shield, Desjardins, and more. We are happy to verify your coverage and submit claims directly on your behalf.",
+    q: "What payment methods do you accept?",
+    a: "Visa, MasterCard, Debit, Cash, and personal cheques. A standard $25 charge is applied to NSF cheques.",
   },
   {
-    q: "Do you accept the Canadian Dental Care Plan (CDCP)?",
-    a: "Yes — we proudly accept CDCP patients. The plan offers publicly funded dental benefits to individuals with annual household incomes below $90,000 who do not have private dental insurance. Just book an appointment and our team will handle the rest.",
+    q: "What's your cancellation policy?",
+    a: "We kindly ask for 24 hours' notice if you need to change your appointment so we can accommodate other patients in need. A $75 charge may apply for appointments missed without any cancellation notice.",
   },
   {
     q: "What technology do you use?",
-    a: "We are one of the few clinics in Ontario that routinely use surgical microscopes and laser dentistry. These tools allow for greater visibility and precision, which means more accurate diagnoses, gentler treatment, and longer-lasting results.",
+    a: "We're one of the few Ontario practices that routinely use surgical microscopes (up to 12× magnification) and laser dentistry — KaVo K.E.Y and Fotona Lightwalker AT-S — on every patient at no additional cost. Greater visibility means more accurate diagnosis, gentler treatment, and longer-lasting results.",
   },
   {
-    q: "Is dental care safe for children and seniors?",
-    a: "Absolutely. Dr. How has cared for patients of every age for over 20 years — from a child's first cleaning to grandparents' implants and dentures.",
+    q: "Can you treat my whole family?",
+    a: "Yes. Dr. How and the team have cared for patients of every age for over 20 years — from children's first cleanings through cosmetic, implant, orthodontic, and prosthodontic care for adults and seniors.",
   },
   {
-    q: "I have a dental emergency — when can I come in?",
-    a: "We reserve time in our daily schedule for emergencies, so we can typically see you the same day. Call us directly at (905) 276-9991 if you have a dental emergency.",
-  },
-  {
-    q: "How quickly can I be seen?",
-    a: "Most new patients are seen within the same week. Call or WhatsApp us and we'll find a time that works for you, often as soon as the next day.",
+    q: "Do you offer scalpel-free gum treatment?",
+    a: "Yes — we offer the Chao Pinhole® Surgical Technique, a scalpel-free, suture-free, graft-free procedure for correcting gum recession through a tiny pinhole made by a needle.",
   },
 ];
 
 export const firstVisitSteps = [
   {
-    title: "Book Online or Call",
+    title: "Call or Email to Book",
     blurb:
-      "Choose a time that works for you. Most new patients are seen within the week.",
+      "Phone (905) 276-9991 or email the office. We'll find a time that works for you, often within the same week.",
   },
   {
-    title: "Quick Insurance Check",
+    title: "Insurance Pre-Check",
     blurb:
-      "We verify your benefits before you walk in — zero surprises at checkout.",
+      "Bring your dental benefit booklet on your first visit so our team can verify coverage and arrange direct billing.",
   },
   {
-    title: "Complimentary Exam & X-Rays",
+    title: "Comprehensive Exam & X-Rays",
     blurb:
-      "A 45-minute comprehensive exam, digital x-rays, and oral-cancer screening with Dr. How.",
+      "Dr. How completes a thorough exam with surgical-microscope assistance and digital imaging — no detail missed.",
   },
   {
-    title: "Personalized Treatment Plan",
+    title: "Treatment Plan Walkthrough",
     blurb:
-      "We walk through findings on screen and design a plan tailored to your goals and budget.",
+      "We review findings on screen and discuss options, fees (per the ODA fee guide), and timing — no high pressure, no surprises.",
   },
   {
-    title: "Your First Cleaning",
+    title: "Begin Your Care",
     blurb:
-      "Gentle, thorough cleaning by our hygienist — you leave with a brighter, healthier smile.",
+      "Schedule your hygiene visit or treatment when you're ready. Microscope and laser tech are included on every visit at no extra cost.",
   },
 ];
 
@@ -293,15 +265,15 @@ export const instagramShots = [
 
 export const promiseCards = [
   {
-    title: "No long-term contracts",
-    body: "Pay-as-you-go. No multi-year membership fees, no buy-ins, no commitments. Stop any time.",
+    title: "Fees follow the ODA fee guide",
+    body: "Our pricing follows the current Ontario Dental Association fee guide — predictable, transparent, no upsells.",
   },
   {
-    title: "No high-pressure sales",
-    body: "Dr. How will recommend a plan, then leave the decision to you. Take it home, sleep on it.",
+    title: "Direct billing to insurance",
+    body: "We bill your insurance company and submit co-insurance forms on your behalf at no extra charge.",
   },
   {
-    title: "No surprise bills",
-    body: "We verify insurance before your visit and walk you through every cost — in writing — first.",
+    title: "Microscope + laser, no upcharge",
+    body: "Surgical microscopes (up to 12×) and laser dentistry are part of every visit — never billed as an upgrade.",
   },
 ];

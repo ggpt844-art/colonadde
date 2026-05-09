@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Calendar, MessageCircle } from "lucide-react";
-import ToothMark from "./ToothMark";
+import ColonnadeMark from "./ColonnadeMark";
 import MobileMenu from "./MobileMenu";
 import { CLINIC, NAV_LINKS } from "@/lib/clinic";
 
@@ -18,16 +18,16 @@ export default function SiteHeader() {
         aria-label="Colonnade Dental — home"
         className="flex items-center gap-3"
       >
-        <ToothMark size={48} />
+        <ColonnadeMark size={48} />
         <div className="leading-[0.95]">
-          <div className="font-black tracking-wide text-[15px] text-[#1a1a1a]">
-            COLONNADE
+          <div className="font-display italic text-[20px] text-[#1a1a1a] tracking-tight">
+            Colonnade
           </div>
-          <div className="text-[#0e6e7d] text-[9px] tracking-[0.3em] font-bold mt-0.5">
+          <div className="text-[#a67a1f] text-[9px] tracking-[0.34em] font-bold mt-0.5">
             DENTAL
           </div>
-          <div className="text-[#2c2c2c] text-[8px] tracking-wider mt-0.5">
-            {CLINIC.doctor.name} &amp; Associates
+          <div className="text-[#4a4a4a] text-[8.5px] tracking-wider mt-0.5">
+            {CLINIC.doctor.name}
           </div>
         </div>
       </Link>
@@ -37,7 +37,7 @@ export default function SiteHeader() {
           <Link
             key={l.label}
             href={l.href}
-            className="hover:text-[#0e6e7d] transition-colors"
+            className="hover:text-[#a67a1f] transition-colors"
           >
             {l.label}
           </Link>
@@ -56,7 +56,7 @@ export default function SiteHeader() {
         </a>
         <Link
           href="/#book"
-          className="hidden sm:inline-flex rounded-full bg-[#0e6e7d] text-white px-5 py-2.5 text-sm font-bold hover:bg-[#08515c] transition-colors items-center gap-2 shadow-md shadow-[#0e6e7d]/20"
+          className="hidden sm:inline-flex rounded-full bg-[#1a1a1a] text-white px-5 py-2.5 text-sm font-bold hover:bg-[#c89535] hover:text-[#1a1a1a] transition-colors items-center gap-2 shadow-md shadow-black/15"
         >
           <Calendar size={15} />
           Book Now

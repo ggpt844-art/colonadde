@@ -19,7 +19,7 @@ const providers: Provider[] = [
   { name: "ClaimSecure", tint: "#fef4e8", ink: "#c45c00", weight: "font-bold" },
   { name: "GreatWest Life", short: "Great-West Life", tint: "#f0eef9", ink: "#3d2c8e", weight: "font-bold" },
   { name: "SSQ", short: "SSQ Insurance", tint: "#e8f5fb", ink: "#0079b3", weight: "font-black" },
-  { name: "CDCP", short: "CDCP (Federal)", tint: "#e9f4f5", ink: "#0e6e7d", weight: "font-bold" },
+  { name: "CDCP", short: "CDCP (Federal)", tint: "#fbf2d8", ink: "#7a5614", weight: "font-bold" },
   { name: "Industrial Alliance", short: "iA Financial", tint: "#fff3ec", ink: "#c44a00", weight: "font-bold" },
 ];
 

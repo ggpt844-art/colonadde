@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Phone, Calendar } from "lucide-react";
-import ToothMark from "./ToothMark";
+import ColonnadeMark from "./ColonnadeMark";
 
 type Props = {
   phone: string;
@@ -37,31 +37,31 @@ export default function FloatingNav({ phone }: Props) {
           aria-label="Colonnade Dental — home"
           className="flex items-center gap-2 pl-1 pr-2 text-[#1a1a1a]"
         >
-          <ToothMark size={30} />
+          <ColonnadeMark size={30} />
           <span className="text-[14px] font-bold tracking-tight">Home</span>
         </Link>
         <nav className="hidden md:flex items-center gap-5 text-[13.5px] font-semibold text-[#1a1a1a]/75 px-2">
-          <Link href="/about" className="hover:text-[#0e6e7d] transition-colors">
+          <Link href="/about" className="hover:text-[#a67a1f] transition-colors">
             About
           </Link>
-          <Link href="/services" className="hover:text-[#0e6e7d] transition-colors">
+          <Link href="/services" className="hover:text-[#a67a1f] transition-colors">
             Services
           </Link>
-          <Link href="/#reviews" className="hover:text-[#0e6e7d] transition-colors">
-            Reviews
+          <Link href="/#technology" className="hover:text-[#a67a1f] transition-colors">
+            Technology
           </Link>
         </nav>
         <div className="flex items-center gap-2">
           <Link
             href="/#book"
-            className="rounded-full border border-[#0e6e7d] text-[#0e6e7d] px-3.5 py-1.5 text-[13px] font-semibold hover:bg-[#0e6e7d]/5 transition-colors flex items-center gap-1.5"
+            className="rounded-full border border-[#1a1a1a] text-[#1a1a1a] px-3.5 py-1.5 text-[13px] font-semibold hover:bg-[#1a1a1a] hover:text-white transition-colors flex items-center gap-1.5"
           >
             <Calendar size={13} />
             Book
           </Link>
           <a
             href={`tel:${phone}`}
-            className="rounded-full bg-[#0e6e7d] text-white px-3.5 py-1.5 text-[13px] font-bold hover:bg-[#08515c] transition-colors flex items-center gap-1.5"
+            className="rounded-full bg-[#c89535] text-[#1a1a1a] px-3.5 py-1.5 text-[13px] font-bold hover:bg-[#a67a1f] hover:text-white transition-colors flex items-center gap-1.5"
             aria-label="Call Colonnade Dental"
           >
             <Phone size={13} />

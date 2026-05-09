@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${SITE_URL}/#technology`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
       url: `${SITE_URL}/#first-visit`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -36,10 +42,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
-      url: `${SITE_URL}/#reviews`,
+      url: `${SITE_URL}/#awards`,
       lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.7,
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
     {
       url: `${SITE_URL}/#faq`,

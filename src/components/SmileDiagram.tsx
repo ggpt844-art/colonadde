@@ -49,7 +49,7 @@ export default function SmileDiagram({ className = "" }: { className?: string })
       {/* Arch */}
       <path
         d="M420 330 Q 600 90, 780 330"
-        stroke="#0e6e7d"
+        stroke="#1a1a1a"
         strokeWidth="6"
         strokeLinecap="round"
         fill="none"
@@ -64,8 +64,8 @@ export default function SmileDiagram({ className = "" }: { className?: string })
           width={22}
           height={28}
           rx={9}
-          fill="#fbf8f3"
-          stroke="#0e6e7d"
+          fill="#faf6ee"
+          stroke="#1a1a1a"
           strokeWidth={2.2}
         />
       ))}
@@ -89,7 +89,7 @@ export default function SmileDiagram({ className = "" }: { className?: string })
               strokeWidth="1.5"
               strokeDasharray="3 3"
             />
-            <circle cx={endX} cy={s.cy} r="4" fill="#0e6e7d" />
+            <circle cx={endX} cy={s.cy} r="4" fill="#c89535" />
             <text
               x={textX}
               y={s.cy - 4}
